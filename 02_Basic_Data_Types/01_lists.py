@@ -44,14 +44,14 @@ Sample Output
 [9, 5, 1]
 
 '''
-n = int(input())
-l = []
-for i in range(n):
-    s = input().split()
-    cmd = s[0]
-    args = s[1:]
-    if cmd !="print":
-        cmd += "("+ ",".join(args) +")"
-        eval("l."+cmd)
+n = int(input())                                           #Takes the value of n, which is number of operations you want to perform on the list.
+l = []                                                     #Variable l is defined to store all the values, or operations being performed through the process.
+for i in range(n):                                         #A for loop to iterate through the value of n and take n inputs.
+    s = input().split()                                    #Takes the input command by the user for every single command and split the command using split()
+    cmd = s[0]                                             #The first character of the string after splitting is going to be the command like: insert, or print, or sort, so that is stored in variable cmd.
+    args = s[1:]                                           #All the characters after the command are going to be the agruments so we store them in args variable.
+    if cmd !="print":                                      #If the value of command is not euqual to print, we perform this conditional statement.
+        cmd += "("+ ",".join(args) +")"                    #We join the arguments and store it in the cmd.
+        eval("l."+cmd)                                     #Then we eval the command and store the avaluated value.
     else:
-        print (l)
+        print (l)                                          #And when we encounter the print statement in the cmd, we print out the result whatever is being stored after performing the eval fucntion.
